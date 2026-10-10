@@ -1,0 +1,158 @@
+{
+  "repo_url": "https://github.com/malikzain3/Sense-Website",
+  "question": "How does this system handle a admin?",
+  "intent": "general",
+  "evidence": [
+    {
+      "id": "E1",
+      "kind": "code",
+      "path": "src/Components/Dashboard.jsx",
+      "start_line": 142,
+      "end_line": 142,
+      "text": "  // --- Event Handlers ---",
+      "commit": null,
+      "tag": null,
+      "location": "src/Components/Dashboard.jsx:142",
+      "block": " 142 |   // --- Event Handlers ---"
+    },
+    {
+      "id": "E2",
+      "kind": "code",
+      "path": "src/Components/Dashboard.jsx",
+      "start_line": 143,
+      "end_line": 143,
+      "text": "  const handleImageUpload = async (e) => {",
+      "commit": null,
+      "tag": null,
+      "location": "src/Components/Dashboard.jsx:143",
+      "block": " 143 |   const handleImageUpload = async (e) => {"
+    },
+    {
+      "id": "E3",
+      "kind": "code",
+      "path": "src/Components/Dashboard.jsx",
+      "start_line": 154,
+      "end_line": 154,
+      "text": "  const handleSubmit = async (e) => {",
+      "commit": null,
+      "tag": null,
+      "location": "src/Components/Dashboard.jsx:154",
+      "block": " 154 |   const handleSubmit = async (e) => {"
+    },
+    {
+      "id": "E4",
+      "kind": "code",
+      "path": "src/Components/Dashboard.jsx",
+      "start_line": 170,
+      "end_line": 170,
+      "text": "  const handleDeleteEvent = (id) => {",
+      "commit": null,
+      "tag": null,
+      "location": "src/Components/Dashboard.jsx:170",
+      "block": " 170 |   const handleDeleteEvent = (id) => {"
+    },
+    {
+      "id": "E5",
+      "kind": "code",
+      "path": "src/Components/Dashboard.jsx",
+      "start_line": 176,
+      "end_line": 176,
+      "text": "  // --- Gallery Handlers ---",
+      "commit": null,
+      "tag": null,
+      "location": "src/Components/Dashboard.jsx:176",
+      "block": " 176 |   // --- Gallery Handlers ---"
+    },
+    {
+      "id": "E6",
+      "kind": "code",
+      "path": "src/Components/Dashboard.jsx",
+      "start_line": 177,
+      "end_line": 177,
+      "text": "  const handleGalleryUpload = async (e) => {",
+      "commit": null,
+      "tag": null,
+      "location": "src/Components/Dashboard.jsx:177",
+      "block": " 177 |   const handleGalleryUpload = async (e) => {"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "The system handles admin actions through event handlers.",
+      "label": "stated",
+      "status": "kept",
+      "reason": null,
+      "evidence_ids": [
+        "E1"
+      ],
+      "citations": [
+        "src/Components/Dashboard.jsx:142"
+      ],
+      "quote": "// --- Event Handlers ---"
+    },
+    {
+      "statement": "The system handles image uploads through the `handleImageUpload` function.",
+      "label": "stated",
+      "status": "kept",
+      "reason": null,
+      "evidence_ids": [
+        "E2"
+      ],
+      "citations": [
+        "src/Components/Dashboard.jsx:143"
+      ],
+      "quote": "const handleImageUpload = async (e) => {"
+    },
+    {
+      "statement": "The system handles form submissions through the `handleSubmit` function.",
+      "label": "stated",
+      "status": "kept",
+      "reason": null,
+      "evidence_ids": [
+        "E3"
+      ],
+      "citations": [
+        "src/Components/Dashboard.jsx:154"
+      ],
+      "quote": "const handleSubmit = async (e) => {"
+    },
+    {
+      "statement": "The system handles event deletions through the `handleDeleteEvent` function.",
+      "label": "stated",
+      "status": "kept",
+      "reason": null,
+      "evidence_ids": [
+        "E4"
+      ],
+      "citations": [
+        "src/Components/Dashboard.jsx:170"
+      ],
+      "quote": "const handleDeleteEvent = (id) => {"
+    },
+    {
+      "statement": "The system handles gallery uploads through the `handleGalleryUpload` function.",
+      "label": "stated",
+      "status": "kept",
+      "reason": null,
+      "evidence_ids": [
+        "E6"
+      ],
+      "citations": [
+        "src/Components/Dashboard.jsx:177"
+      ],
+      "quote": "const handleGalleryUpload = async (e) => {"
+    }
+  ],
+  "dropped": [],
+  "cannot_confirm": [],
+  "missing": [],
+  "notes": [],
+  "counts": {
+    "kept": 5,
+    "flagged": 0,
+    "dropped": 0
+  },
+  "badge": "5 verified, 0 flagged, 0 dropped",
+  "error": null,
+  "cached": false
+}

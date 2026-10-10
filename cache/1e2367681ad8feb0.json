@@ -1,0 +1,109 @@
+{
+  "repo_url": "https://github.com/Rafay0011-oss/My-Portfolio-Website",
+  "question": "What does this code do",
+  "intent": "overview",
+  "evidence": [
+    {
+      "id": "E1",
+      "kind": "doc",
+      "path": "README.md",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "# React + Vite",
+      "commit": null,
+      "tag": null,
+      "location": "README.md:1",
+      "block": "   1 | # React + Vite"
+    },
+    {
+      "id": "E2",
+      "kind": "doc",
+      "path": "README.md",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+      "commit": null,
+      "tag": null,
+      "location": "README.md:3",
+      "block": "   3 | This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules."
+    },
+    {
+      "id": "E3",
+      "kind": "doc",
+      "path": "README.md",
+      "start_line": 5,
+      "end_line": 5,
+      "text": "Currently, two official plugins are available:",
+      "commit": null,
+      "tag": null,
+      "location": "README.md:5",
+      "block": "   5 | Currently, two official plugins are available:"
+    },
+    {
+      "id": "E4",
+      "kind": "dependency",
+      "path": "package.json",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "{",
+      "commit": null,
+      "tag": null,
+      "location": "package.json:1",
+      "block": "   1 | {"
+    },
+    {
+      "id": "E5",
+      "kind": "dependency",
+      "path": "package.json",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "  \"name\": \"portfolio\",",
+      "commit": null,
+      "tag": null,
+      "location": "package.json:2",
+      "block": "   2 |   \"name\": \"portfolio\","
+    }
+  ],
+  "claims": [
+    {
+      "statement": "This code provides a minimal setup for a React application using Vite with Hot Module Replacement (HMR) and ESLint rules.",
+      "label": "stated",
+      "status": "kept",
+      "reason": null,
+      "evidence_ids": [
+        "E2"
+      ],
+      "citations": [
+        "README.md:3"
+      ],
+      "quote": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules."
+    },
+    {
+      "statement": "The code includes two official plugins.",
+      "label": "stated",
+      "status": "kept",
+      "reason": null,
+      "evidence_ids": [
+        "E3"
+      ],
+      "citations": [
+        "README.md:5"
+      ],
+      "quote": "Currently, two official plugins are available:"
+    }
+  ],
+  "dropped": [],
+  "cannot_confirm": [
+    "The code does not provide information about the specific plugins or their functionalities."
+  ],
+  "missing": [],
+  "notes": [],
+  "counts": {
+    "kept": 2,
+    "flagged": 0,
+    "dropped": 0
+  },
+  "badge": "2 verified, 0 flagged, 0 dropped",
+  "error": null,
+  "cached": false
+}
