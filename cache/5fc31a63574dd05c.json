@@ -1,0 +1,175 @@
+{
+  "repo_url": "https://github.com/docker/awesome-compose",
+  "question": "How does this system handle a large number of users?",
+  "intent": "scaling",
+  "evidence": [
+    {
+      "id": "E1",
+      "kind": "dependency",
+      "path": "flask-redis/requirements.txt",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "redis",
+      "commit": null,
+      "tag": "caching",
+      "location": "flask-redis/requirements.txt:2",
+      "block": "   2 | redis"
+    },
+    {
+      "id": "E2",
+      "kind": "config",
+      "path": "wasmedge-kafka-mysql/compose.yml",
+      "start_line": 9,
+      "end_line": 9,
+      "text": "      - --kafka-addr PLAINTEXT://0.0.0.0:29092,OUTSIDE://0.0.0.0:9092",
+      "commit": null,
+      "tag": "queue_background",
+      "location": "wasmedge-kafka-mysql/compose.yml:9",
+      "block": "   9 |       - --kafka-addr PLAINTEXT://0.0.0.0:29092,OUTSIDE://0.0.0.0:9092"
+    },
+    {
+      "id": "E3",
+      "kind": "doc",
+      "path": "wasmedge-kafka-mysql/README.md",
+      "start_line": 99,
+      "end_line": 99,
+      "text": "Produced to partition 0 at offset 0 with timestamp 1667922788523.",
+      "commit": null,
+      "tag": "db_scaling",
+      "location": "wasmedge-kafka-mysql/README.md:99",
+      "block": "  99 | Produced to partition 0 at offset 0 with timestamp 1667922788523."
+    },
+    {
+      "id": "E4",
+      "kind": "config",
+      "path": "nginx-nodejs-redis/nginx/nginx.conf",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "upstream loadbalancer {",
+      "commit": null,
+      "tag": "horizontal_scaling",
+      "location": "nginx-nodejs-redis/nginx/nginx.conf:1",
+      "block": "   1 | upstream loadbalancer {"
+    },
+    {
+      "id": "E5",
+      "kind": "code",
+      "path": "wasmedge-mysql-nginx/frontend/index.html",
+      "start_line": 99,
+      "end_line": 99,
+      "text": "  <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3\" crossorigin=\"anonymous\"></script>",
+      "commit": null,
+      "tag": "stateless_auth",
+      "location": "wasmedge-mysql-nginx/frontend/index.html:99",
+      "block": "  99 |   <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3\" crossorigin=\"anonymous\"></script>"
+    },
+    {
+      "id": "E6",
+      "kind": "dependency",
+      "path": "fastapi/requirements.txt",
+      "start_line": 1,
+      "end_line": 1,
+      "text": "fastapi",
+      "commit": null,
+      "tag": "async_io",
+      "location": "fastapi/requirements.txt:1",
+      "block": "   1 | fastapi"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "This system uses Redis for caching and session management.",
+      "label": "unverified",
+      "status": "flagged",
+      "reason": "quote not found in the cited evidence",
+      "evidence_ids": [
+        "E1"
+      ],
+      "citations": [
+        "flask-redis/requirements.txt:2"
+      ],
+      "quote": "flask-redis/requirements.txt:2\nredis"
+    },
+    {
+      "statement": "The system is configured to handle multiple Kafka brokers.",
+      "label": "unverified",
+      "status": "flagged",
+      "reason": "quote not found in the cited evidence",
+      "evidence_ids": [
+        "E2"
+      ],
+      "citations": [
+        "wasmedge-kafka-mysql/compose.yml:9"
+      ],
+      "quote": "wasmedge-kafka-mysql/compose.yml:9\n      - --kafka-addr PLAINTEXT://0.0.0.0:29092,OUTSIDE://0.0.0.0:9092"
+    },
+    {
+      "statement": "The system is designed to handle a large number of users.",
+      "label": "inferred",
+      "status": "kept",
+      "reason": null,
+      "evidence_ids": [
+        "E3"
+      ],
+      "citations": [
+        "wasmedge-kafka-mysql/README.md:99"
+      ],
+      "quote": "Produced to partition 0 at offset 0 with timestamp 1667922788523."
+    },
+    {
+      "statement": "The system uses Nginx as a reverse proxy for load balancing.",
+      "label": "unverified",
+      "status": "flagged",
+      "reason": "quote not found in the cited evidence",
+      "evidence_ids": [
+        "E4"
+      ],
+      "citations": [
+        "nginx-nodejs-redis/nginx/nginx.conf:1"
+      ],
+      "quote": "nginx-nodejs-redis/nginx/nginx.conf:1\nupstream loadbalancer {"
+    },
+    {
+      "statement": "The system uses Bootstrap for frontend styling.",
+      "label": "unverified",
+      "status": "flagged",
+      "reason": "quote not found in the cited evidence",
+      "evidence_ids": [
+        "E5"
+      ],
+      "citations": [
+        "wasmedge-mysql-nginx/frontend/index.html:99"
+      ],
+      "quote": "wasmedge-mysql-nginx/frontend/index.html:99\n  <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3\" crossorigin=\"anonymous\"></script>"
+    },
+    {
+      "statement": "The system uses FastAPI for building the backend API.",
+      "label": "unverified",
+      "status": "flagged",
+      "reason": "quote not found in the cited evidence",
+      "evidence_ids": [
+        "E6"
+      ],
+      "citations": [
+        "fastapi/requirements.txt:1"
+      ],
+      "quote": "fastapi/requirements.txt:1\nfastapi"
+    }
+  ],
+  "dropped": [],
+  "cannot_confirm": [
+    "The system's ability to handle a large number of users is not explicitly documented."
+  ],
+  "missing": [
+    "rate_limiting"
+  ],
+  "notes": [],
+  "counts": {
+    "kept": 1,
+    "flagged": 5,
+    "dropped": 0
+  },
+  "badge": "1 verified, 5 flagged, 0 dropped",
+  "error": null,
+  "cached": false
+}

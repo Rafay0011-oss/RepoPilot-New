@@ -1,0 +1,8 @@
+# RepoPilot runtime dependencies.
+# AI runs locally through Ollama only; there are no cloud AI packages here.
+
+ollama>=0.3.0        # local Qwen coder model client (talks to localhost:11434)
+streamlit>=1.30.0    # prototype UI (app.py, built last)
+
+# Development / testing only.
+pytest>=8.0.0

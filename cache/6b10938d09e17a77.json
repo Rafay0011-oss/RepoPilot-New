@@ -1,0 +1,117 @@
+{
+  "repo_url": "https://github.com/dockersamples/example-voting-app",
+  "question": "How does this system handle a large number of users?",
+  "intent": "scaling",
+  "evidence": [
+    {
+      "id": "E1",
+      "kind": "dependency",
+      "path": "vote/requirements.txt",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "Redis",
+      "commit": null,
+      "tag": "caching",
+      "location": "vote/requirements.txt:2",
+      "block": "   2 | Redis"
+    },
+    {
+      "id": "E2",
+      "kind": "config",
+      "path": "k8s-specifications/db-deployment.yaml",
+      "start_line": 8,
+      "end_line": 8,
+      "text": "  replicas: 1",
+      "commit": null,
+      "tag": "horizontal_scaling",
+      "location": "k8s-specifications/db-deployment.yaml:8",
+      "block": "   8 |   replicas: 1"
+    },
+    {
+      "id": "E3",
+      "kind": "dependency",
+      "path": "vote/requirements.txt",
+      "start_line": 3,
+      "end_line": 3,
+      "text": "gunicorn",
+      "commit": null,
+      "tag": "async_io",
+      "location": "vote/requirements.txt:3",
+      "block": "   3 | gunicorn"
+    },
+    {
+      "id": "E4",
+      "kind": "config",
+      "path": "k8s-specifications/redis-deployment.yaml",
+      "start_line": 5,
+      "end_line": 5,
+      "text": "    app: redis",
+      "commit": null,
+      "tag": "caching",
+      "location": "k8s-specifications/redis-deployment.yaml:5",
+      "block": "   5 |     app: redis"
+    },
+    {
+      "id": "E5",
+      "kind": "config",
+      "path": "k8s-specifications/redis-deployment.yaml",
+      "start_line": 8,
+      "end_line": 8,
+      "text": "  replicas: 1",
+      "commit": null,
+      "tag": "horizontal_scaling",
+      "location": "k8s-specifications/redis-deployment.yaml:8",
+      "block": "   8 |   replicas: 1"
+    },
+    {
+      "id": "E6",
+      "kind": "config",
+      "path": "vote/Dockerfile",
+      "start_line": 32,
+      "end_line": 32,
+      "text": "CMD [\"gunicorn\", \"app:app\", \"-b\", \"0.0.0.0:80\", \"--log-file\", \"-\", \"--access-logfile\", \"-\", \"--workers\", \"4\", \"--keep-alive\", \"0\"]",
+      "commit": null,
+      "tag": "async_io",
+      "location": "vote/Dockerfile:32",
+      "block": "  32 | CMD [\"gunicorn\", \"app:app\", \"-b\", \"0.0.0.0:80\", \"--log-file\", \"-\", \"--access-logfile\", \"-\", \"--workers\", \"4\", \"--keep-alive\", \"0\"]"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "This system uses Redis for caching and gunicorn for handling requests.",
+      "label": "unverified",
+      "status": "flagged",
+      "reason": "quote not found in the cited evidence",
+      "evidence_ids": [
+        "E4",
+        "E5",
+        "E6"
+      ],
+      "citations": [
+        "k8s-specifications/redis-deployment.yaml:5",
+        "k8s-specifications/redis-deployment.yaml:8",
+        "vote/Dockerfile:32"
+      ],
+      "quote": "Redis is used in k8s-specifications/redis-deployment.yaml:5 and k8s-specifications/redis-deployment.yaml:8, and gunicorn is used in vote/Dockerfile:32."
+    }
+  ],
+  "dropped": [],
+  "cannot_confirm": [
+    "scaling strategies"
+  ],
+  "missing": [
+    "queue_background",
+    "db_scaling",
+    "stateless_auth",
+    "rate_limiting"
+  ],
+  "notes": [],
+  "counts": {
+    "kept": 0,
+    "flagged": 1,
+    "dropped": 0
+  },
+  "badge": "0 verified, 1 flagged, 0 dropped",
+  "error": null,
+  "cached": false
+}

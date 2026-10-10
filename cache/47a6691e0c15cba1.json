@@ -1,0 +1,82 @@
+{
+  "repo_url": "https://github.com/docker/awesome-compose",
+  "question": "Why is redis used in this project?",
+  "intent": "why",
+  "evidence": [
+    {
+      "id": "E1",
+      "kind": "commit",
+      "path": null,
+      "start_line": null,
+      "end_line": null,
+      "text": "Nginx/Node/Redis  and Flask/Redis Compose example (#222)\n\n* Added Node, Nginx and Redis Project\n* Added Flask/Redis",
+      "commit": "04f8c9ca12fc4bcef11602297c377bd9979bd559",
+      "tag": "why",
+      "location": "commit 04f8c9ca12fc4bcef11602297c377bd9979bd559",
+      "block": "Nginx/Node/Redis  and Flask/Redis Compose example (#222)\n\n* Added Node, Nginx and Redis Project\n* Added Flask/Redis"
+    },
+    {
+      "id": "E2",
+      "kind": "doc",
+      "path": "CONTRIBUTING.md",
+      "start_line": 92,
+      "end_line": 92,
+      "text": "    maintained indefinitely and may be redistributed consistent with",
+      "commit": null,
+      "tag": "why",
+      "location": "CONTRIBUTING.md:92",
+      "block": "  92 |     maintained indefinitely and may be redistributed consistent with"
+    },
+    {
+      "id": "E3",
+      "kind": "doc",
+      "path": "README.md",
+      "start_line": 36,
+      "end_line": 36,
+      "text": "- [`NGINX / Node.js / Redis`](nginx-nodejs-redis) - Sample Node.js application with Nginx proxy and a Redis database.",
+      "commit": null,
+      "tag": "why",
+      "location": "README.md:36",
+      "block": "  36 | - [`NGINX / Node.js / Redis`](nginx-nodejs-redis) - Sample Node.js application with Nginx proxy and a Redis database."
+    },
+    {
+      "id": "E4",
+      "kind": "code",
+      "path": "flask-redis/requirements.txt",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "redis",
+      "commit": null,
+      "tag": "why",
+      "location": "flask-redis/requirements.txt:2",
+      "block": "   2 | redis"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "Redis is used in this project to store and manage data.",
+      "label": "unverified",
+      "status": "flagged",
+      "reason": "quote not found in the cited evidence",
+      "evidence_ids": [
+        "E3"
+      ],
+      "citations": [
+        "README.md:36"
+      ],
+      "quote": "Redis - [`NGINX / Node.js / Redis`](nginx-nodejs-redis) - Sample Node.js application with Nginx proxy and a Redis database."
+    }
+  ],
+  "dropped": [],
+  "cannot_confirm": [],
+  "missing": [],
+  "notes": [],
+  "counts": {
+    "kept": 0,
+    "flagged": 1,
+    "dropped": 0
+  },
+  "badge": "0 verified, 1 flagged, 0 dropped",
+  "error": null,
+  "cached": false
+}

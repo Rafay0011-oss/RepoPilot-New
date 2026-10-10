@@ -1,0 +1,82 @@
+{
+  "repo_url": "https://github.com/dockersamples/example-voting-app",
+  "question": "Why is redis used in this project?",
+  "intent": "why",
+  "evidence": [
+    {
+      "id": "E1",
+      "kind": "commit",
+      "path": null,
+      "start_line": null,
+      "end_line": null,
+      "text": "Rename services to remove \"app\"",
+      "commit": "09279e12a8fe3d50836458ef18242f255c0eef1b",
+      "tag": "why",
+      "location": "commit 09279e12a8fe3d50836458ef18242f255c0eef1b",
+      "block": "Rename services to remove \"app\""
+    },
+    {
+      "id": "E2",
+      "kind": "doc",
+      "path": "README.md",
+      "start_line": 9,
+      "end_line": 9,
+      "text": "This solution uses Python, Node.js, .NET, with Redis for messaging and Postgres for storage.",
+      "commit": null,
+      "tag": "why",
+      "location": "README.md:9",
+      "block": "   9 | This solution uses Python, Node.js, .NET, with Redis for messaging and Postgres for storage."
+    },
+    {
+      "id": "E3",
+      "kind": "doc",
+      "path": "README.md",
+      "start_line": 54,
+      "end_line": 54,
+      "text": "* A [Redis](https://hub.docker.com/_/redis/) which collects new votes",
+      "commit": null,
+      "tag": "why",
+      "location": "README.md:54",
+      "block": "  54 | * A [Redis](https://hub.docker.com/_/redis/) which collects new votes"
+    },
+    {
+      "id": "E4",
+      "kind": "code",
+      "path": "vote/requirements.txt",
+      "start_line": 2,
+      "end_line": 2,
+      "text": "Redis",
+      "commit": null,
+      "tag": "why",
+      "location": "vote/requirements.txt:2",
+      "block": "   2 | Redis"
+    }
+  ],
+  "claims": [
+    {
+      "statement": "Redis is used in this project to collect new votes.",
+      "label": "stated",
+      "status": "kept",
+      "reason": null,
+      "evidence_ids": [
+        "E3"
+      ],
+      "citations": [
+        "README.md:54"
+      ],
+      "quote": "A [Redis](https://hub.docker.com/_/redis/) which collects new votes"
+    }
+  ],
+  "dropped": [],
+  "cannot_confirm": [],
+  "missing": [],
+  "notes": [],
+  "counts": {
+    "kept": 1,
+    "flagged": 0,
+    "dropped": 0
+  },
+  "badge": "1 verified, 0 flagged, 0 dropped",
+  "error": null,
+  "cached": false
+}
